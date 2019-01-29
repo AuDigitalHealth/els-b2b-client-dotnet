@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ELS Vendor Library")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Nehta.VendorLibrary.SM.ELS")]
+[assembly: AssemblyDescription("Endpoint Location Service Library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ADHA")]
-[assembly: AssemblyProduct("ELS Vendor Library")]
-[assembly: AssemblyCopyright("ADHA 2017")]
+[assembly: AssemblyCompany("Australian Digital Health Agency")]
+[assembly: AssemblyProduct("Nehta.VendorLibrary.SM.ELS")]
+[assembly: AssemblyCopyright("Copyright ©2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,8 +31,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.3.0")]
-[assembly: AssemblyFileVersion("1.0.3.0")]
+[assembly: AssemblyVersion("1.0.3.1")]
+[assembly: AssemblyFileVersion("1.0.3.1")]
 
 // Make internal variables visible to specified assembly for testing
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Nehta.VendorLibrary.SM.ELS.Test")]

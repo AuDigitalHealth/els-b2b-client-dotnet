@@ -13,8 +13,6 @@
  */
 
 using System;
-using System.Net;
-using System.Net.Security;
 using System.ServiceModel.Channels;
 using Nehta.ELSv2010;
 using System.Security.Cryptography.X509Certificates;
