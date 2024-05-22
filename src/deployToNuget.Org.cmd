@@ -1,10 +1,10 @@
 del *.nupkg
 
-nuget restore
-
 msbuild ELS.sln /p:Configuration=Release
 
-NuGet.exe pack ELS/ELS.csproj -Properties Configuration=Release
+REM Use dotnet for packaging now
+REM NuGet.exe pack ELS/ELS.csproj -Properties Configuration=Release
+dotnet pack .\ELS\ELS.csproj -c Release -o .
 
 pause
 

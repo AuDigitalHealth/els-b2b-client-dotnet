@@ -18,7 +18,6 @@ using Nehta.ELSv2010;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using Nehta.VendorLibrary.Common;
-using Nehta.VendorLibrary.SM.ELS.Properties;
 
 namespace Nehta.VendorLibrary.SM.ELS
 {
@@ -151,7 +150,7 @@ namespace Nehta.VendorLibrary.SM.ELS
             if (response != null)
                 return response.listInteractionsResponse1;
             else
-                throw new ApplicationException(Resources.UnexpectedServiceResponse);
+                throw new ApplicationException(ELSExtensions.UnexpectedServiceResponse);
         }
 
         /// <summary>
@@ -195,7 +194,7 @@ namespace Nehta.VendorLibrary.SM.ELS
             if (response != null && response.validateInteractionResponse != null)
                 return response.validateInteractionResponse.isValid;
             else
-                throw new ApplicationException(Resources.UnexpectedServiceResponse);
+                throw new ApplicationException(ELSExtensions.UnexpectedServiceResponse);
         }
 
         #endregion
@@ -219,7 +218,7 @@ namespace Nehta.VendorLibrary.SM.ELS
         /// <returns>Value indicating if the operation is successful.</returns>
         public PublishReturnCodeType AddInteraction(InteractionType request)
         {
-            if (publishClient == null) throw new ApplicationException(Resources.PublishEndpointNotSet);
+            if (publishClient == null) throw new ApplicationException(ELSExtensions.PublishEndpointNotSet);
 
             Validation.ValidateArgumentRequired("serviceCategory", request.serviceCategory);
             Validation.ValidateArgumentRequired("serviceInterface", request.serviceInterface);
@@ -244,7 +243,7 @@ namespace Nehta.VendorLibrary.SM.ELS
             if (response != null && response.addInteractionResponse != null)
                 return response.addInteractionResponse.returnCode;
             else
-                throw new ApplicationException(Resources.UnexpectedServiceResponse);
+                throw new ApplicationException(ELSExtensions.UnexpectedServiceResponse);
         }
                 
         /// <summary>
@@ -264,7 +263,7 @@ namespace Nehta.VendorLibrary.SM.ELS
         /// <returns>Value indicating if the operation is successful.</returns>
         public PublishReturnCodeType RemoveInteraction(InteractionType request)
         {
-            if (publishClient == null) throw new ApplicationException(Resources.PublishEndpointNotSet);
+            if (publishClient == null) throw new ApplicationException(ELSExtensions.PublishEndpointNotSet);
 
             Validation.ValidateArgumentRequired("serviceCategory", request.serviceCategory);
             Validation.ValidateArgumentRequired("serviceInterface", request.serviceInterface);
@@ -289,7 +288,7 @@ namespace Nehta.VendorLibrary.SM.ELS
             if (response != null && response.removeInteractionResponse != null)
                 return response.removeInteractionResponse.returnCode;
             else
-                throw new ApplicationException(Resources.UnexpectedServiceResponse);
+                throw new ApplicationException(ELSExtensions.UnexpectedServiceResponse);
         }
 
         #endregion
@@ -306,7 +305,7 @@ namespace Nehta.VendorLibrary.SM.ELS
         private void InitializeClient(string lookupEndpointUrl, string publishEndpointUrl, X509Certificate2 clientCertificate, string lookupConfigurationName, string publishConfigurationName)
         {
             if (clientCertificate == null)
-                throw new ArgumentException(Resources.InvalidClientCertificate);
+                throw new ArgumentException(ELSExtensions.InvalidClientCertificate);
 
             publishMessages = new SoapInspector.SoapMessages();
             lookupMessages = new SoapInspector.SoapMessages();

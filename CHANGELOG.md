@@ -1,5 +1,9 @@
 ### Change Log/Revision History
 
+1.1.0
+-----
+- Added support for netstandard2.0
+
 1.0.3
 -----
 - Updated with latest common library

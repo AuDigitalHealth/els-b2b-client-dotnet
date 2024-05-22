@@ -14,9 +14,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Nehta.VendorLibrary.SM.ELS;
 using System.Security.Cryptography.X509Certificates;
 using Nehta.VendorLibrary.Common;
 using Nehta.ELSv2010;
@@ -54,15 +51,15 @@ namespace Nehta.VendorLibrary.SM.ELS.Sample
             // url in "Lookup" mode. Only operations associated with the "Lookup" interface
             // can be invoked
             ELSClient lookupClient = new ELSClient(
-                new Uri("https://LookupServiceEndpointUrl"), 
+                new Uri("https://LookupServiceEndpointUrl"),
                 tlsCert);
 
             // Instantiating the client with the client certificate and client service endpoint urls 
             // in "Lookup and Publish" mode. Operations associated with both "Lookup" and "Publish"
             // interfaces can be invoked
             ELSClient lookupAndPublishClient = new ELSClient(
-                new Uri("https://LookupServiceEndpointUrl"), 
-                new Uri("https://PublishServiceEndpointUrl"), 
+                new Uri("https://LookupServiceEndpointUrl"),
+                new Uri("https://PublishServiceEndpointUrl"),
                 tlsCert);
 
             // ------------------------------------------------------------------------------
@@ -89,7 +86,7 @@ namespace Nehta.VendorLibrary.SM.ELS.Sample
             validateInteraction.serviceInterface = "ServiceInterfacetoValidate";
             validateInteraction.serviceProvider = HIQualifiers.HPIOQualifier + "16 digit HPIO of service provider organisation to validate";
             validateInteraction.target = HIQualifiers.HPIOQualifier + "16 digit HPIO of target organisation to validate";
-            
+
             // Invoke operation
             lookupAndPublishClient.ValidateInteraction(validateInteraction);
 

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Nehta.ELSv2010;
 
 namespace Nehta.VendorLibrary.SM.ELS
@@ -30,5 +27,31 @@ namespace Nehta.VendorLibrary.SM.ELS
                 }
             });
         }
+
+        /// <summary>
+        /// ApplicationException CertRefsNotSet 
+        /// </summary>
+        public const string CertRefsNotSet = "certRefs must be instantiated with at least one certificate reference";
+
+        /// <summary>
+        /// ApplicationException InvalidClientCertificate 
+        /// </summary>
+        public const string InvalidClientCertificate = "clientCertificate must be a valid X509Certificate2 object";
+
+        /// <summary>
+        /// ApplicationException LookupEndpointNotSet 
+        /// </summary>
+        public const string LookupEndpointNotSet = "lookupEndpointUrl or lookupEndpointConfigurationName must be specified in the ELSClient constructor for this operation";
+
+        /// <summary>
+        /// ApplicationException PublishEndpointNotSet 
+        /// </summary>
+        public const string PublishEndpointNotSet = "publishEndpointUrl or publishEndpointConfigurationName must be specified in the ELSClient constructor for this operation";
+
+
+        /// <summary>
+        /// ApplicationException UnexpectedServiceResponse 
+        /// </summary>
+        public const string UnexpectedServiceResponse = "Unexpected response received from the service";
     }
 }
